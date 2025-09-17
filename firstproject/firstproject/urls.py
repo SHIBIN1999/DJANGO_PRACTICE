@@ -20,5 +20,5 @@ from subapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.hai)
+    path('',views.create)
 ]
