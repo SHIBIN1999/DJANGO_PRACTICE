@@ -3,5 +3,5 @@ from django.http import HttpResponse
 
 # Create your views here.
 def create(request):
-    s={'title':'the gold','summary':'the gold ','year':2010}
+    s={'title':'the gold','summary':'the gold ','year':2010,'success':True}
     return render(request,'create.html',s)
