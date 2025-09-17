@@ -1,5 +1,6 @@
-{% extends 'edit.html'%}
+{% load static %}
 
-{% block content %}
-<h1>create</h1>
-{% endblock content %}
+
+{% for k in m%}
+<img src="{% static 'image/'%}{{k.im}}">
+{% endfor%}
