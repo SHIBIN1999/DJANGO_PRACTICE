@@ -33,9 +33,15 @@ def delete(request,pk):
 
 def edit(request,pk):
    get_id=Student.objects.get(pk=pk)
+   obj1=StudentModel(instance=get_id)
    if request.POST:
-       get_id.title=request.POST.get('title')
-       get_id.summary=request.POST.get('summary')
-       get_id.year=request.POST.get('year')
+       title=request.POST.get('title')
+       summary=request.POST.get('summary')
+       year=request.POST.get('year')
+       get_id.title=title
+       get_id.summary=summary
+       get_id.year=year
        get_id.save()
-   return render(request,'edit.html',{'e':get_id})
+
+       
+   return render(request,'create.html',{'obj':obj1})
