@@ -1,4 +1,4 @@
-<table>
+<table border="2px solid red">
     <tr>
         <th>title</th>
         <th>summary</th>
@@ -10,6 +10,7 @@
 <td><h1>{{k.title}}</h1>
 <td><h1>{{k.summary}}</h1></td></td>
 <td><h1>{{k.year}}</h1></td>
+<td><a href="{% url 'edit' k.id %}">edit</a>/<a href="{% url 'delete' k.id %}">delete</a></td>
 </tr>
 {% endfor %}
 </table>

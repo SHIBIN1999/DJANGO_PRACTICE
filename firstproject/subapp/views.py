@@ -17,6 +17,17 @@ def create(request):
 def list(request):
     t=Student.objects.all()
     return render(request,'list.html',{'t':t})
+def table(request):
+    t=Student.objects.all()
+    return render(request,'table.html',{'t':t})
+
+def delete(request,pk):
+    get_id=Student.objects.get(pk=pk)
+    print(get_id)
+    get_id.delete()
+    t=Student.objects.all()
+    return render(request,'table.html',{'t':t})
+
 
 
 def edit(request):
