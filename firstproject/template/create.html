@@ -1,6 +1,7 @@
-{% load static %}
-
-
-{% for k in m%}
-<img src="{% static 'image/'%}{{k.im}}">
-{% endfor%}
+<form method="post">
+    {% csrf_token %}
+    title<input type="text" name="title">
+    summary<input type="text" name="summary">
+    year<input type="number" name="year">
+         <button type="submit">ok</button>
+</form>
