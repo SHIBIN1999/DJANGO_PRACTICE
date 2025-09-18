@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from . models import Student
+from . forms import StudentModel
 # Create your views here.
 def create(request):
-    print(request,"ffffffffffff")
+    obj=StudentModel()
     if request.POST:
         title=request.POST.get('title')
         summary=request.POST.get('summary')
@@ -11,7 +12,7 @@ def create(request):
         obj=Student(title=title,summary=summary,year=year)
         obj.save()
    
-    return render(request,'create.html')
+    return render(request,'create.html',{'obj':obj})
 
    
 def list(request):
