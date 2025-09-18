@@ -1,2 +1,5 @@
-<h1>title={{title}}</h1>
-<h1>summary={{summary}}</h1>
+{% for k in t%}
+<h1>title={{k.title}}</h1>
+<h1>summary={{k.summary}}</h1>
+<h1>year={{k.year}}</h1>
+{% endfor %}

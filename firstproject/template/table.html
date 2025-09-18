@@ -1,0 +1,15 @@
+<table>
+    <tr>
+        <th>title</th>
+        <th>summary</th>
+        <th>year</th>
+        <th>edit/delete</th>
+    </tr>
+{% for k in t%}
+<tr>
+<td><h1>{{k.title}}</h1>
+<td><h1>{{k.summary}}</h1></td></td>
+<td><h1>{{k.year}}</h1></td>
+</tr>
+{% endfor %}
+</table>
