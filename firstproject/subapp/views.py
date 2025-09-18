@@ -30,5 +30,11 @@ def delete(request,pk):
 
 
 
-def edit(request):
-   return render(request,'edit.html')
+def edit(request,pk):
+   get_id=Student.objects.get(pk=pk)
+   if request.POST:
+       get_id.title=request.POST.get('title')
+       get_id.summary=request.POST.get('summary')
+       get_id.year=request.POST.get('year')
+       get_id.save()
+   return render(request,'edit.html',{'e':get_id})
