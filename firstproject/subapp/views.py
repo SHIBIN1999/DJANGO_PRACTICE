@@ -4,15 +4,15 @@ from . models import Student
 from . forms import StudentModel
 # Create your views here.
 def create(request):
-    obj=StudentModel()
     if request.POST:
-        title=request.POST.get('title')
-        summary=request.POST.get('summary')
-        year=request.POST.get('year')
-        obj=Student(title=title,summary=summary,year=year)
-        obj.save()
+        obj1=StudentModel(request.POST)
+        if obj1.is_valid():
+            obj1.save()
+    else:
+        obj1=StudentModel()
+    
    
-    return render(request,'create.html',{'obj':obj})
+    return render(request,'create.html',{'obj':obj1})
 
    
 def list(request):
